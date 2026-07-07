@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PROVAKAR - টেস্ট পেজ</title>
+    <style>
+        body {
+            font-family: 'Noto Sans Bengali', sans-serif;
+            padding: 2rem;
+            background: #f5f5f5;
+        }
+        .test-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 { color: #3b82f6; }
+        .test-item {
+            padding: 1rem;
+            margin: 1rem 0;
+            background: #f0f9ff;
+            border-left: 4px solid #3b82f6;
+            border-radius: 5px;
+        }
+        .test-link {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background: #3b82f6;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            margin: 0.5rem 0.5rem 0.5rem 0;
+        }
+        .status { padding: 1rem; margin: 1rem 0; border-radius: 5px; }
+        .status.success { background: #d1fae5; border-left: 4px solid #10b981; }
+        .status.error { background: #fee2e2; border-left: 4px solid #ef4444; }
+    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="test-container">
+        <h1>🎉 PROVAKAR ওয়েবসাইট টেস্ট</h1>
+        <p>নিচের লিংকগুলোতে ক্লিক করে চেক করুন যে ওয়েবসাইট ঠিকমতো কাজ করছে কিনা:</p>
+
+        <div class="status success">
+            <strong>✅ সব বাগ ঠিক করা হয়েছে!</strong><br>
+            জাভাস্ক্রিপ্ট সিনট্যাক্স এরর ঠিক করা হয়েছে。<br>
+            স্ক্রিপ্ট লোডিং অর্ডার ঠিক করা হয়েছে।
+        </div>
+
+        <h2>📋 টেস্ট লিংকসমূহ:</h2>
+
+        <div class="test-item">
+            <strong>১. হোম পেজ</strong><br>
+            <a href="index.html" class="test-link">হোম পেজ ওপেন করুন</a>
+        </div>
+
+        <div class="test-item">
+            <strong>২. অধ্যায় তালিকা</strong><br>
+            <a href="chapters.html" class="test-link">অধ্যায়সমূহ দেখুন</a>
+        </div>
+
+        <div class="test-item">
+            <strong>৩. অধ্যায় ১: ধ্বনি ও বর্ণ</strong><br>
+            <a href="chapter.html?id=1" class="test-link">অধ্যায় ১ পড়ুন</a>
+        </div>
+
+        <div class="test-item">
+            <strong>৪. অধ্যায় ২: শব্দ ও পদ</strong><br>
+            <a href="chapter.html?id=2" class="test-link">অধ্যায় ২ পড়ুন</a>
+        </div>
+
+        <div class="test-item">
+            <strong>৫. কুইজ (অধ্যায় ১)</strong><br>
+            <a href="quiz.html?chapter=1" class="test-link">কুইজ শুরু করুন</a>
+        </div>
+
+        <div class="test-item">
+            <strong>৬. প্রগতি ড্যাশবোর্ড</strong><br>
+            <a href="dashboard.html" class="test-link">ড্যাশবোর্ড দেখুন</a>
+        </div>
+
+        <div class="test-item">
+            <strong>৭. সেটিংস</strong><br>
+            <a href="settings.html" class="test-link">সেটিংস ওপেন করুন</a>
+        </div>
+
+        <h2>🔧 টেস্ট চেকলিস্ট:</h2>
+        <div class="test-item">
+            <ul>
+                <li>✅ ডার্ক/লাইট মোড টগল করুন (আপনার ইউজার আইকনের নিচে থিম বাটন)</li>
+                <li>✅ অধ্যায় ১ এ যান ও কন্টেন্ট স্ক্রল করুন</li>
+                <li>✅ TOC (বাম দিকের মেনু) কাজ করছে কিনা চেক করুন</li>
+                <li>✅ কুইজ এ যান ও ৩টি মোড টেস্ট করুন</li>
+                <li>✅ মোবাইল ভিউ টেস্ট করুন (ব্রাউজার উইন্ডো ছোট করুন)</li>
+            </ul>
+        </div>
+
+        <div class="status error" style="margin-top: 2rem;">
+            <strong>⚠️ নোট:</strong><br>
+            ওয়েবসাইটটি লোকাল ফাইল হিসেবে ওপেন করলে কিছু ফিচার (যেমন: ফন্ট অয়েলসাম আইকন) 
+            কাজ নাও করতে পারে কারণ CDN থেকে লোড হয়।<br>
+            তবে সব মূল ফিচার কাজ করবে।
+        </div>
+
+        <div style="margin-top: 2rem; padding: 1rem; background: #fef3c7; border-left: 4px solid #f59e0b; border-radius: 5px;">
+            <strong>📦 ডাউনলোড করতে সমস্যা হচ্ছে?</strong><br>
+            নিচের ধাপগুলো অনুসরণ করুন:<br>
+            ১. গিটহাবে রিপোজিটরি তৈরি করুন<br>
+            ২. ফাইলগুলো আপলোড করুন<br>
+            ৩. গিট ক্লোন করুন অথবা GitHub Pages এ হোস্ট করুন<br><br>
+            বিস্তারিত: <code>GITHUB-DEPLOYMENT-GUIDE.md</code> ফাইল পড়ুন।
+        </div>
+    </div>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a1685e8a08a8759f',t:'MTc4MzI3NTQ3NQ=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>

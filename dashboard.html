@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>প্রগতি - PROVAKAR</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div id="loading-screen" class="loading-screen">
+        <div class="loader">
+            <div class="loader-text">PROVAKAR</div>
+            <div class="loader-bar">
+                <div class="loader-progress"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="header-container">
+            <div class="logo">
+                <a href="index.html">
+                    <span class="logo-icon">📚</span>
+                    <span class="logo-text">PROVAKAR</span>
+                </a>
+            </div>
+            <nav class="nav-menu" id="nav-menu">
+                <ul class="nav-list">
+                    <li><a href="index.html" class="nav-link"><i class="fas fa-home"></i> হোম</a></li>
+                    <li><a href="chapters.html" class="nav-link"><i class="fas fa-book-open"></i> অধ্যায়সমূহ</a></li>
+                    <li><a href="dashboard.html" class="nav-link active"><i class="fas fa-chart-line"></i> প্রগতি</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <button class="theme-toggle" id="theme-toggle"><i class="fas fa-moon"></i></button>
+                <button class="settings-btn" id="settings-btn"><i class="fas fa-cog"></i></button>
+                <button class="mobile-menu-btn" id="mobile-menu-btn"><i class="fas fa-bars"></i></button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Dashboard Main -->
+    <main class="dashboard-main">
+        <div class="container">
+            <!-- Page Header -->
+            <section class="page-header-section">
+                <h1 class="page-title"><i class="fas fa-chart-line"></i> আমার প্রগতি</h1>
+                <p class="page-description">আপনার পড়াশোনার সারসংক্ষেপ</p>
+            </section>
+
+            <!-- Stats Cards -->
+            <section class="stats-cards">
+                <div class="stat-card">
+                    <div class="stat-icon" style="background: rgba(59, 130, 246, 0.1); color: var(--primary-color);">
+                        <i class="fas fa-book"></i>
+                    </div>
+                    <div class="stat-info">
+                        <div class="stat-number" id="chapters-started">০</div>
+                        <div class="stat-label">অধ্যায় শুরু করেছেন</div>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon" style="background: rgba(16, 185, 129, 0.1); color: var(--success-color);">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <div class="stat-info">
+                        <div class="stat-number" id="chapters-completed">০</div>
+                        <div class="stat-label">অধ্যায় সম্পন্ন</div>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon" style="background: rgba(245, 158, 11, 0.1); color: var(--warning-color);">
+                        <i class="fas fa-question-circle"></i>
+                    </div>
+                    <div class="stat-info">
+                        <div class="stat-number" id="quizzes-taken">০</div>
+                        <div class="stat-label">কুইজ দিয়েছেন</div>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon" style="background: rgba(139, 92, 246, 0.1); color: var(--accent-color);">
+                        <i class="fas fa-percentage"></i>
+                    </div>
+                    <div class="stat-info">
+                        <div class="stat-number" id="avg-score">০%</div>
+                        <div class="stat-label">গড় স্কোর</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Charts Section -->
+            <section class="charts-section">
+                <div class="chart-card">
+                    <h3 class="chart-title">অধ্যায়ভিত্তিক প্রগতি</h3>
+                    <div class="progress-bars" id="chapter-progress-bars">
+                        <!-- Progress bars will be loaded here -->
+                    </div>
+                </div>
+                <div class="chart-card">
+                    <h3 class="chart-title">কুইজ হিস্ট্রি</h3>
+                    <div class="quiz-history" id="quiz-history">
+                        <!-- Quiz history will be loaded here -->
+                    </div>
+                </div>
+            </section>
+
+            <!-- Action Buttons -->
+            <section class="dashboard-actions">
+                <a href="chapters.html" class="btn btn-primary">
+                    <i class="fas fa-book-open"></i> পড়া শুরু করুন
+                </a>
+                <a href="quiz.html?chapter=1" class="btn btn-secondary">
+                    <i class="fas fa-question-circle"></i> কুইজ দিন
+                </a>
+                <button class="btn btn-danger" id="reset-all-progress">
+                    <i class="fas fa-trash-alt"></i> সব প্রগতি মুছে দিন
+                </button>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>Made with <i class="fas fa-heart"></i> by PROVAKAR | Copyright © 2025</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/storage.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/dashboard.js"></script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a1684538fef9a292',t:'MTc4MzI3NDQzOA=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>

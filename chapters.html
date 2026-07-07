@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>অধ্যায়সমূহ - PROVAKAR</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div id="loading-screen" class="loading-screen">
+        <div class="loader">
+            <div class="loader-text">PROVAKAR</div>
+            <div class="loader-bar">
+                <div class="loader-progress"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="header-container">
+            <div class="logo">
+                <a href="index.html">
+                    <span class="logo-icon">📚</span>
+                    <span class="logo-text">PROVAKAR</span>
+                </a>
+            </div>
+            <nav class="nav-menu" id="nav-menu">
+                <ul class="nav-list">
+                    <li><a href="index.html" class="nav-link"><i class="fas fa-home"></i> হোম</a></li>
+                    <li><a href="chapters.html" class="nav-link active"><i class="fas fa-book-open"></i> অধ্যায়সমূহ</a></li>
+                    <li><a href="dashboard.html" class="nav-link"><i class="fas fa-chart-line"></i> প্রগতি</a></li>
+                    <li><a href="mock-test.html" class="nav-link"><i class="fas fa-file-alt"></i> মক টেস্ট</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <button class="theme-toggle" id="theme-toggle"><i class="fas fa-moon"></i></button>
+                <button class="settings-btn" id="settings-btn"><i class="fas fa-cog"></i></button>
+                <button class="mobile-menu-btn" id="mobile-menu-btn"><i class="fas fa-bars"></i></button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Page Header -->
+        <section class="page-header">
+            <div class="container">
+                <h1 class="page-title"><i class="fas fa-book-open"></i> সকল অধ্যায়সমূহ</h1>
+                <p class="page-description">পশ্চিমবঙ্গ গ্রাম পঞ্চায়েত পরীক্ষার বাংলা বিষয়ের ১৭টি অধ্যায়</p>
+            </div>
+        </section>
+
+        <!-- Category Filter -->
+        <section class="category-filter">
+            <div class="container">
+                <div class="filter-buttons">
+                    <button class="filter-btn active" data-category="all">
+                        <i class="fas fa-th"></i> সকল অধ্যায়
+                    </button>
+                    <button class="filter-btn" data-category="grammar">
+                        <i class="fas fa-language"></i> ব্যাকরণ (১-১০)
+                    </button>
+                    <button class="filter-btn" data-category="vocabulary">
+                        <i class="fas fa-spell-check"></i> শব্দভাণ্ডার (১১-১৬)
+                    </button>
+                    <button class="filter-btn" data-category="literature">
+                        <i class="fas fa-feather-alt"></i> সাহিত্য (১৭)
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Chapters Grid -->
+        <section class="chapters-section">
+            <div class="container">
+                <!-- বিভাগ ক: বাংলা ব্যাকরণ (Chapters 1-10) -->
+                <div class="chapter-group" id="grammar">
+                    <h2 class="group-title"><i class="fas fa-language"></i> বিভাগ ক: বাংলা ব্যাকরণ</h2>
+                    <div class="chapters-grid">
+                        <!-- Chapter 1 -->
+                        <div class="chapter-card" data-category="grammar" data-chapter="1">
+                            <div class="chapter-card-header">
+                                <div class="chapter-number">অধ্যায় ১</div>
+                                <div class="chapter-icon">🔤</div>
+                            </div>
+                            <div class="chapter-card-body">
+                                <h3 class="chapter-title">ধ্বনি ও বর্ণ</h3>
+                                <p class="chapter-subtitle">Sound and Letters</p>
+                                <div class="chapter-progress">
+                                    <div class="progress-bar">
+                                        <div class="progress-fill" id="progress-ch1" style="width: 0%"></div>
+                                    </div>
+                                    <span class="progress-text">০% সম্পন্ন</span>
+                                </div>
+                            </div>
+                            <div class="chapter-card-footer">
+                                <a href="chapter.html?id=1" class="btn btn-primary btn-sm">
+                                    <i class="fas fa-book-reader"></i> পড়ুন
+                                </a>
+                                <a href="quiz.html?chapter=1" class="btn btn-secondary btn-sm">
+                                    <i class="fas fa-question-circle"></i> কুইজ
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Chapter 2 -->
+                        <div class="chapter-card" data-category="grammar" data-chapter="2">
+                            <div class="chapter-card-header">
+                                <div class="chapter-number">অধ্যায় ২</div>
+                                <div class="chapter-icon">📝</div>
+                            </div>
+                            <div class="chapter-card-body">
+                                <h3 class="chapter-title">শব্দ ও পদের শ্রেণিবিভাগ</h3>
+                                <p class="chapter-subtitle">Parts of Speech</p>
+                                <div class="chapter-progress">
+                                    <div class="progress-bar">
+                                        <div class="progress-fill" id="progress-ch2" style="width: 0%"></div>
+                                    </div>
+                                    <span class="progress-text">০% সম্পন্ন</span>
+                                </div>
+                            </div>
+                            <div class="chapter-card-footer">
+                                <a href="chapter.html?id=2" class="btn btn-primary btn-sm">
+                                    <i class="fas fa-book-reader"></i> পড়ুন
+                                </a>
+                                <a href="quiz.html?chapter=2" class="btn btn-secondary btn-sm">
+                                    <i class="fas fa-question-circle"></i> কুইজ
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Chapter 3 -->
+                        <div class="chapter-card" data-category="grammar" data-chapter="3">
+                            <div class="chapter-card-header">
+                                <div class="chapter-number">অধ্যায় ৩</div>
+                                <div class="chapter-icon">🔗</div>
+                            </div>
+                            <div class="chapter-card-body">
+                                <h3 class="chapter-title">সন্ধি</h3>
+                                <p class="chapter-subtitle">Sandhi</p>
+                                <div class="chapter-progress">
+                                    <div class="progress-bar">
+                                        <div class="progress-fill" style="width: 0%"></div>
+                                    </div>
+                                    <span class="progress-text">০% সম্পন্ন</span>
+                                </div>
+                            </div>
+                            <div class="chapter-card-footer">
+                                <a href="#" class="btn btn-primary btn-sm disabled">
+                                    <i class="fas fa-book-reader"></i> শীঘ্রই আসছে
+                                </a>
+                                <a href="#" class="btn btn-secondary btn-sm disabled">
+                                    <i class="fas fa-question-circle"></i> শীঘ্রই
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Chapter 4 -->
+                        <div class="chapter-card" data-category="grammar" data-chapter="4">
+                            <div class="chapter-card-header">
+                                <div class="chapter-number">অধ্যায় ৪</div>
+                                <div class="chapter-icon">📌</div>
+                            </div>
+                            <div class="chapter-card-body">
+                                <h3 class="chapter-title">কারক ও বিভক্তি</h3>
+                                <p class="chapter-subtitle">Case and Postposition</p>
+                                <div class="chapter-progress">
+                                    <div class="progress-bar">
+                                        <div class="progress-fill" style="width: 0%"></div>
+                                    </div>
+                                    <span class="progress-text">০% সম্পন্ন</span>
+                                </div>
+                            </div>
+                            <div class="chapter-card-footer">
+                                <a href="#" class="btn btn-primary btn-sm disabled">
+                                    <i class="fas fa-book-reader"></i> শীঘ্রই আসছে
+                                </a>
+                                <a href="#" class="btn btn-secondary btn-sm disabled">
+                                    <i class="fas fa-question-circle"></i> শীঘ্রই
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Chapter 5 -->
+                        <div class="chapter-card" data-category="grammar" data-chapter="5">
+                            <div class="chapter-card-header">
+                                <div class="chapter-number">অধ্যায় ৫</div>
+                                <div class="chapter-icon">📚</div>
+                            </div>
+                            <div class="chapter-card-body">
+                                <h3 class="chapter-title">সমাস</h3>
+                                <p class="chapter-subtitle">Compound</p>
+                                <div class="chapter-progress">
+                                    <div class="progress-bar">
+                                        <div class="progress-fill" style="width: 0%"></div>
+                                    </div>
+                                    <span class="progress-text">০% সম্পন্ন</span>
+                                </div>
+                            </div>
+                            <div class="chapter-card-footer">
+                                <a href="#" class="btn btn-primary btn-sm disabled">
+                                    <i class="fas fa-book-reader"></i> শীঘ্রই আসছে
+                                </a>
+                                <a href="#" class="btn btn-secondary btn-sm disabled">
+                                    <i class="fas fa-question-circle"></i> শীঘ্রই
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Chapters 6-10 Placeholder -->
+                        <div class="chapter-card placeholder" data-category="grammar">
+                            <div class="chapter-card-body">
+                                <p>অধ্যায় ৬-১০ শীঘ্রই যুক্ত করা হবে...</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- বিভাগ খ: শব্দভাণ্ডার (Chapters 11-16) -->
+                <div class="chapter-group" id="vocabulary">
+                    <h2 class="group-title"><i class="fas fa-spell-check"></i> বিভাগ খ: শব্দভাণ্ডার ও অর্থ</h2>
+                    <div class="chapters-grid">
+                        <!-- Chapter 11 -->
+                        <div class="chapter-card" data-category="vocabulary" data-chapter="11">
+                            <div class="chapter-card-header">
+                                <div class="chapter-number">অধ্যায় ১১</div>
+                                <div class="chapter-icon">📖</div>
+                            </div>
+                            <div class="chapter-card-body">
+                                <h3 class="chapter-title">বাংলা শব্দভাণ্ডার</h3>
+                                <p class="chapter-subtitle">Bengali Vocabulary</p>
+                                <div class="chapter-progress">
+                                    <div class="progress-bar">
+                                        <div class="progress-fill" style="width: 0%"></div>
+                                    </div>
+                                    <span class="progress-text">০% সম্পন্ন</span>
+                                </div>
+                            </div>
+                            <div class="chapter-card-footer">
+                                <a href="#" class="btn btn-primary btn-sm disabled">
+                                    <i class="fas fa-book-reader"></i> শীঘ্রই আসছে
+                                </a>
+                                <a href="#" class="btn btn-secondary btn-sm disabled">
+                                    <i class="fas fa-question-circle"></i> শীঘ্রই
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Chapters 12-16 Placeholder -->
+                        <div class="chapter-card placeholder" data-category="vocabulary">
+                            <div class="chapter-card-body">
+                                <p>অধ্যায় ১২-১৬ শীঘ্রই যুক্ত করা হবে...</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- বিভাগ গ: সাহিত্য (Chapter 17) -->
+                <div class="chapter-group" id="literature">
+                    <h2 class="group-title"><i class="fas fa-feather-alt"></i> বিভাগ গ: সাহিত্য ও বোধপরীক্ষণ</h2>
+                    <div class="chapters-grid">
+                        <!-- Chapter 17 -->
+                        <div class="chapter-card" data-category="literature" data-chapter="17">
+                            <div class="chapter-card-header">
+                                <div class="chapter-number">অধ্যায় ১৭</div>
+                                <div class="chapter-icon">✍️</div>
+                            </div>
+                            <div class="chapter-card-body">
+                                <h3 class="chapter-title">সাহিত্যিকদের পরিচিতি ও বোধপরীক্ষণ</h3>
+                                <p class="chapter-subtitle">Literature & Comprehension</p>
+                                <div class="chapter-progress">
+                                    <div class="progress-bar">
+                                        <div class="progress-fill" style="width: 0%"></div>
+                                    </div>
+                                    <span class="progress-text">০% সম্পন্ন</span>
+                                </div>
+                            </div>
+                            <div class="chapter-card-footer">
+                                <a href="#" class="btn btn-primary btn-sm disabled">
+                                    <i class="fas fa-book-reader"></i> শীঘ্রই আসছে
+                                </a>
+                                <a href="#" class="btn btn-secondary btn-sm disabled">
+                                    <i class="fas fa-question-circle"></i> শীঘ্রই
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <h3>PROVAKAR Study Hub</h3>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>Made with <i class="fas fa-heart"></i> by PROVAKAR | Copyright © 2025</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- FAB -->
+    <div class="fab-container" id="fab-container">
+        <div class="fab-panel" id="fab-panel">
+            <div class="fab-panel-header">
+                <h3>PROVAKAR Hub</h3>
+                <button class="fab-panel-close" id="fab-panel-close"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="fab-links">
+                <a href="https://provakar4173student-del.github.io/provakar-hub/" target="_blank" class="fab-link">
+                    <span class="fab-link-icon">🏠</span>
+                    <span class="fab-link-text">Provakar Hub</span>
+                </a>
+                <a href="https://provakar4173student-del.github.io/Provakar/" target="_blank" class="fab-link">
+                    <span class="fab-link-icon">📚</span>
+                    <span class="fab-link-text">Provakar Main</span>
+                </a>
+                <a href="https://provakar4173student-del.github.io/provakar-math/" target="_blank" class="fab-link">
+                    <span class="fab-link-icon">🔢</span>
+                    <span class="fab-link-text">Provakar Math</span>
+                </a>
+            </div>
+        </div>
+        <button class="fab-btn" id="fab-btn"><i class="fas fa-globe"></i></button>
+    </div>
+
+    <!-- Settings Modal -->
+    <div class="modal-overlay" id="settings-modal">
+        <div class="modal-content settings-modal-content">
+            <div class="modal-header">
+                <h2><i class="fas fa-cog"></i> সেটিংস</h2>
+                <button class="modal-close" id="settings-close"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="modal-body">
+                <!-- Settings tabs/content same as index.html -->
+            </div>
+        </div>
+    </div>
+
+    <script src="js/storage.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/settings.js"></script>
+    <script>
+        // Filter functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            const chapterGroups = document.querySelectorAll('.chapter-group');
+
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const category = this.dataset.category;
+
+                    // Update active button
+                    filterBtns.forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+
+                    // Show/hide groups
+                    if (category === 'all') {
+                        chapterGroups.forEach(g => g.style.display = 'block');
+                    } else {
+                        chapterGroups.forEach(g => {
+                            g.style.display = g.id === category ? 'block' : 'none';
+                        });
+                    }
+                });
+            });
+
+            // Update progress bars
+            const progress = Storage.getAllProgress();
+            for (let i = 1; i <= 17; i++) {
+                const progressFill = document.getElementById(`progress-ch${i}`);
+                if (progressFill && progress[i]) {
+                    const percent = progress[i].percentage || 0;
+                    progressFill.style.width = `${percent}%`;
+                    progressFill.parentElement.nextElementSibling.textContent = `${percent}% সম্পন্ন`;
+                }
+            }
+        });
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a168442f3b3f6c72',t:'MTc4MzI3NDM5Ng=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>

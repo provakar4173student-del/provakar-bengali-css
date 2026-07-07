@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>সেটিংস - PROVAKAR</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div id="loading-screen" class="loading-screen">
+        <div class="loader">
+            <div class="loader-text">PROVAKAR</div>
+            <div class="loader-bar">
+                <div class="loader-progress"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="header-container">
+            <div class="logo">
+                <a href="index.html">
+                    <span class="logo-icon">📚</span>
+                    <span class="logo-text">PROVAKAR</span>
+                </a>
+            </div>
+            <nav class="nav-menu" id="nav-menu">
+                <ul class="nav-list">
+                    <li><a href="index.html" class="nav-link"><i class="fas fa-home"></i> হোম</a></li>
+                    <li><a href="chapters.html" class="nav-link"><i class="fas fa-book-open"></i> অধ্যায়সমূহ</a></li>
+                    <li><a href="dashboard.html" class="nav-link"><i class="fas fa-chart-line"></i> প্রগতি</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <button class="theme-toggle" id="theme-toggle"><i class="fas fa-moon"></i></button>
+                <button class="settings-btn" id="settings-btn"><i class="fas fa-cog"></i></button>
+                <button class="mobile-menu-btn" id="mobile-menu-btn"><i class="fas fa-bars"></i></button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Settings Main -->
+    <main class="settings-main">
+        <div class="container">
+            <section class="page-header-section">
+                <h1 class="page-title"><i class="fas fa-cog"></i> সেটিংস</h1>
+                <p class="page-description">আপনার পছন্দ অনুযায়ী ওয়েবসাইট কাস্টমাইজ করুন</p>
+            </section>
+
+            <div class="settings-grid">
+                <!-- Display Settings -->
+                <div class="settings-card">
+                    <h3 class="settings-card-title"><i class="fas fa-palette"></i> ডিসপ্লে সেটিংস</h3>
+                    
+                    <div class="setting-item">
+                        <label>থিম মোড</label>
+                        <div class="theme-switcher">
+                            <button class="theme-option" data-theme="light" onclick="App.setTheme('light')">
+                                <i class="fas fa-sun"></i> লাইট
+                            </button>
+                            <button class="theme-option" data-theme="dark" onclick="App.setTheme('dark')">
+                                <i class="fas fa-moon"></i> ডার্ক
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="setting-item">
+                        <label>ফন্ট সাইজ</label>
+                        <div class="font-size-switcher">
+                            <button class="font-size-option" data-size="small" onclick="App.setFontSize('small')">ছোট</button>
+                            <button class="font-size-option" data-size="medium" onclick="App.setFontSize('medium')">মাঝারি</button>
+                            <button class="font-size-option" data-size="large" onclick="App.setFontSize('large')">বড়</button>
+                        </div>
+                    </div>
+
+                    <div class="setting-item">
+                        <label>রঙের থিম</label>
+                        <div class="color-theme-switcher">
+                            <button class="color-theme-option" data-color="blue" style="background: #3b82f6;" onclick="App.setColorTheme('blue')"></button>
+                            <button class="color-theme-option" data-color="green" style="background: #10b981;" onclick="App.setColorTheme('green')"></button>
+                            <button class="color-theme-option" data-color="purple" style="background: #8b5cf6;" onclick="App.setColorTheme('purple')"></button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quiz Settings -->
+                <div class="settings-card">
+                    <h3 class="settings-card-title"><i class="fas fa-question-circle"></i> কুইজ সেটিংস</h3>
+                    
+                    <div class="setting-item">
+                        <label>ডিফল্ট কুইজ মোড</label>
+                        <select id="default-quiz-mode" onchange="Settings.set('QUIZ_MODE', this.value)">
+                            <option value="study">পড়ার মোড</option>
+                            <option value="practice">অনুশীলন মোড</option>
+                            <option value="exam">পরীক্ষা মোড</option>
+                        </select>
+                    </div>
+
+                    <div class="setting-item">
+                        <label>টাইমার</label>
+                        <div class="toggle-switch">
+                            <input type="checkbox" id="timer-toggle" checked onchange="Settings.set('TIMER_ENABLED', this.checked)">
+                            <span class="toggle-slider"></span>
+                        </div>
+                    </div>
+
+                    <div class="setting-item">
+                        <label>প্রতি কুইজে প্রশ্নের সংখ্যা</label>
+                        <select id="questions-per-quiz" onchange="Settings.set('QUESTIONS_PER_QUIZ', this.value)">
+                            <option value="10">১০</option>
+                            <option value="25">২৫</option>
+                            <option value="50">৫০</option>
+                            <option value="100">১০০</option>
+                            <option value="all">সব</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Data Management -->
+                <div class="settings-card">
+                    <h3 class="settings-card-title"><i class="fas fa-database"></i> ডেটা ম্যানেজমেন্ট</h3>
+                    
+                    <div class="setting-item">
+                        <p style="color: var(--text-secondary); margin-bottom: 1rem;">
+                            আপনার সমস্ত প্রগতি, কুইজ হিস্ট্রি এবং সেটিংস localStorage এ সেভ হয়। 
+                            আপনি ডেটা এক্সপোর্ট বা ইমপোর্ট করতে পারেন।
+                        </p>
+                        <div class="data-buttons">
+                            <button class="btn btn-secondary" onclick="App.exportData()">
+                                <i class="fas fa-download"></i> ডেটা এক্সপোর্ট
+                            </button>
+                            <button class="btn btn-secondary" onclick="document.getElementById('import-file').click()">
+                                <i class="fas fa-upload"></i> ডেটা ইমপোর্ট
+                            </button>
+                            <input type="file" id="import-file" accept=".json" style="display: none;" onchange="App.importData(event)">
+                            <button class="btn btn-danger" onclick="App.resetProgress()">
+                                <i class="fas fa-trash-alt"></i> সব প্রগতি মুছে দিন
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Add Questions -->
+                <div class="settings-card">
+                    <h3 class="settings-card-title"><i class="fas fa-plus-circle"></i> প্রশ্ন যোগ করুন</h3>
+                    
+                    <div class="setting-item">
+                        <p style="color: var(--text-secondary); margin-bottom: 1rem;">
+                            আপনি বাইরে থেকে নতুন MCQ প্রশ্ন যোগ করতে পারেন। 
+                            নিচের ফরম্যাটে JSON লিখুন বা আপলোড করুন।
+                        </p>
+                        <button class="btn btn-primary" onclick="alert('বিস্তারিত ইনস্ট্রাকশন README.md ফাইলে দেখুন।')">
+                            <i class="fas fa-info-circle"></i> ইনস্ট্রাকশন দেখুন
+                        </button>
+                    </div>
+                </div>
+
+                <!-- About -->
+                <div class="settings-card">
+                    <h3 class="settings-card-title"><i class="fas fa-info-circle"></i> সম্পর্কে</h3>
+                    
+                    <div class="about-content">
+                        <h4>PROVAKAR Study Hub</h4>
+                        <p><strong>ভার্সন:</strong> ১.০.০</p>
+                        <p><strong>তৈরি করা হয়েছে:</strong> পশ্চিমবঙ্গ গ্রাম পঞ্চায়েত পরীক্ষার জন্য</p>
+                        <p><strong>যোগাযোগ:</strong><br>
+                           📧 <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="0474766b72656f657666313035446369656d682a676b69">[email&#160;protected]</a><br>
+                           📷 Instagram: @provakar.biswas.3914
+                        </p>
+                        <p style="margin-top: 1rem; color: var(--text-muted); font-size: var(--font-size-sm);">
+                            Made with <i class="fas fa-heart" style="color: var(--danger-color);"></i> by PROVAKAR<br>
+                            Copyright © 2025
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>Made with <i class="fas fa-heart"></i> by PROVAKAR | Copyright © 2025</p>
+            </div>
+        </div>
+    </footer>
+
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="js/storage.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/settings.js"></script>
+    <script>
+        // Initialize settings on load
+        document.addEventListener('DOMContentLoaded', () => {
+            // Apply saved settings to UI
+            const theme = Storage.get(Storage.keys.THEME) || 'light';
+            const fontSize = Storage.get(Storage.keys.FONT_SIZE) || 'medium';
+            const colorTheme = Storage.get(Storage.keys.COLOR_THEME) || 'blue';
+            const quizMode = Storage.get(Storage.keys.QUIZ_MODE) || 'study';
+            const timerEnabled = Storage.get(Storage.keys.TIMER_ENABLED);
+            const questionsPerQuiz = Storage.get(Storage.keys.QUESTIONS_PER_QUIZ) || '10';
+
+            // Update theme buttons
+            document.querySelectorAll('.theme-option').forEach(btn => {
+                btn.classList.toggle('active', btn.dataset.theme === theme);
+            });
+
+            // Update font size buttons
+            document.querySelectorAll('.font-size-option').forEach(btn => {
+                btn.classList.toggle('active', btn.dataset.size === fontSize);
+            });
+
+            // Update color theme buttons
+            document.querySelectorAll('.color-theme-option').forEach(btn => {
+                btn.classList.toggle('active', btn.dataset.color === colorTheme);
+            });
+
+            // Update select elements
+            const quizModeSelect = document.getElementById('default-quiz-mode');
+            const timerToggle = document.getElementById('timer-toggle');
+            const questionsSelect = document.getElementById('questions-per-quiz');
+
+            if (quizModeSelect) quizModeSelect.value = quizMode;
+            if (timerToggle) timerToggle.checked = timerEnabled !== false;
+            if (questionsSelect) questionsSelect.value = questionsPerQuiz;
+        });
+
+        // App functions for settings
+        App.setTheme = function(theme) {
+            Storage.set(Storage.keys.THEME, theme);
+            App.applyTheme();
+        };
+
+        App.setFontSize = function(size) {
+            Storage.set(Storage.keys.FONT_SIZE, size);
+            App.applyFontSize();
+        };
+
+        App.setColorTheme = function(color) {
+            Storage.set(Storage.keys.COLOR_THEME, color);
+            App.applyColorTheme();
+        };
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a167b212bcb21a13',t:'MTc4MzI2ODQxMQ=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>

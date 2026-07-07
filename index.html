@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PROVAKAR - বাংলা পরীক্ষা প্রস্তুতি</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div id="loading-screen" class="loading-screen">
+        <div class="loader">
+            <div class="loader-text">PROVAKAR</div>
+            <div class="loader-bar">
+                <div class="loader-progress"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header / Navbar -->
+    <header class="header" id="header">
+        <div class="header-container">
+            <div class="logo">
+                <a href="index.html">
+                    <span class="logo-icon">📚</span>
+                    <span class="logo-text">PROVAKAR</span>
+                    <span class="logo-subtitle">Study Hub</span>
+                </a>
+            </div>
+            <nav class="nav-menu" id="nav-menu">
+                <ul class="nav-list">
+                    <li><a href="index.html" class="nav-link active"><i class="fas fa-home"></i> হোম</a></li>
+                    <li><a href="chapters.html" class="nav-link"><i class="fas fa-book-open"></i> অধ্যায়সমূহ</a></li>
+                    <li><a href="dashboard.html" class="nav-link"><i class="fas fa-chart-line"></i> প্রগতি</a></li>
+                    <li><a href="mock-test.html" class="nav-link"><i class="fas fa-file-alt"></i> মক টেস্ট</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <button class="theme-toggle" id="theme-toggle" title="থিম পরিবর্তন">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <button class="settings-btn" id="settings-btn" title="সেটিংস">
+                    <i class="fas fa-cog"></i>
+                </button>
+                <button class="mobile-menu-btn" id="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="hero-bg-animation"></div>
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    <span class="welcome-text">স্বাগতম</span>
+                    PROVAKAR
+                    <span class="hero-subtitle">আপনার পরীক্ষার প্রস্তুতি, এক ক্লিকে</span>
+                </h1>
+                <p class="hero-description">
+                    পশ্চিমবঙ্গ গ্রাম পঞ্চায়েত পরীক্ষার বাংলা বিষয়ের সম্পূর্ণ প্রস্তুতি - 
+                    সকল ১৭টি অধ্যায়ের বিস্তারিত পড়াশোনা, শর্টকাট মেথড, MCQ কুইজ ও মক টেস্ট
+                </p>
+                <div class="hero-stats">
+                    <div class="stat-card">
+                        <div class="stat-icon"><i class="fas fa-book"></i></div>
+                        <div class="stat-number">১৭</div>
+                        <div class="stat-label">মোট অধ্যায়</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon"><i class="fas fa-question-circle"></i></div>
+                        <div class="stat-number" id="total-questions">১৭০০+</div>
+                        <div class="stat-label">মোট MCQ</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon"><i class="fas fa-clipboard-check"></i></div>
+                        <div class="stat-number">১০+</div>
+                        <div class="stat-label">মক টেস্ট</div>
+                    </div>
+                </div>
+                <div class="hero-actions">
+                    <a href="chapters.html" class="btn btn-primary btn-lg">
+                        <i class="fas fa-play-circle"></i> শুরু করুন
+                    </a>
+                    <a href="#categories" class="btn btn-secondary btn-lg">
+                        <i class="fas fa-info-circle"></i> বিস্তারিত জানুন
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Search Section -->
+        <section class="search-section">
+            <div class="container">
+                <div class="search-box">
+                    <i class="fas fa-search search-icon"></i>
+                    <input type="text" id="global-search" placeholder="যেকোনো অধ্যায় বা টপিক খুঁজুন..." autocomplete="off">
+                    <div class="search-results" id="search-results"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Categories Section -->
+        <section class="categories-section" id="categories">
+            <div class="container">
+                <h2 class="section-title">বিষয়ভিত্তিক বিভাগ</h2>
+                <div class="categories-grid">
+                    <div class="category-card" onclick="location.href='chapters.html#grammar'">
+                        <div class="category-icon">
+                            <i class="fas fa-language"></i>
+                        </div>
+                        <h3 class="category-title">বাংলা ব্যাকরণ</h3>
+                        <p class="category-desc">অধ্যায় ১-১০</p>
+                        <div class="category-progress">
+                            <div class="progress-bar">
+                                <div class="progress-fill" id="grammar-progress" style="width: 0%"></div>
+                            </div>
+                            <span class="progress-text">০% সম্পন্ন</span>
+                        </div>
+                    </div>
+                    <div class="category-card" onclick="location.href='chapters.html#vocabulary'">
+                        <div class="category-icon">
+                            <i class="fas fa-spell-check"></i>
+                        </div>
+                        <h3 class="category-title">শব্দভাণ্ডার ও অর্থ</h3>
+                        <p class="category-desc">অধ্যায় ১১-১৬</p>
+                        <div class="category-progress">
+                            <div class="progress-bar">
+                                <div class="progress-fill" id="vocabulary-progress" style="width: 0%"></div>
+                            </div>
+                            <span class="progress-text">০% সম্পন্ন</span>
+                        </div>
+                    </div>
+                    <div class="category-card" onclick="location.href='chapters.html#literature'">
+                        <div class="category-icon">
+                            <i class="fas fa-feather-alt"></i>
+                        </div>
+                        <h3 class="category-title">সাহিত্য ও বোধপরীক্ষণ</h3>
+                        <p class="category-desc">অধ্যায় ১৭</p>
+                        <div class="category-progress">
+                            <div class="progress-bar">
+                                <div class="progress-fill" id="literature-progress" style="width: 0%"></div>
+                            </div>
+                            <span class="progress-text">০% সম্পন্ন</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Recent Activity Section -->
+        <section class="activity-section">
+            <div class="container">
+                <h2 class="section-title">সাম্প্রতিক কার্যকলাপ</h2>
+                <div class="activity-list" id="recent-activity">
+                    <div class="activity-empty">
+                        <i class="fas fa-history"></i>
+                        <p>আপনি এখনো কোনো কুইজ দেননি। শুরু করতে একটি অধ্যায় নির্বাচন করুন।</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quick Links -->
+        <section class="quick-links-section">
+            <div class="container">
+                <h2 class="section-title">দ্রুত লিঙ্ক</h2>
+                <div class="quick-links-grid">
+                    <a href="chapters.html" class="quick-link-card">
+                        <i class="fas fa-book-reader"></i>
+                        <span>সকল অধ্যায়</span>
+                    </a>
+                    <a href="quiz.html" class="quick-link-card">
+                        <i class="fas fa-brain"></i>
+                        <span>MCQ কুইজ</span>
+                    </a>
+                    <a href="mock-test.html" class="quick-link-card">
+                        <i class="fas fa-tasks"></i>
+                        <span>মক টেস্ট</span>
+                    </a>
+                    <a href="dashboard.html" class="quick-link-card">
+                        <i class="fas fa-chart-pie"></i>
+                        <span>প্রগতি দেখুন</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <h3>PROVAKAR Study Hub</h3>
+                    <p>পশ্চিমবঙ্গ গ্রাম পঞ্চায়েত পরীক্ষার বাংলা বিষয়ের সম্পূর্ণ প্রস্তুতি</p>
+                </div>
+                <div class="footer-links">
+                    <h4>দ্রুত লিঙ্ক</h4>
+                    <ul>
+                        <li><a href="index.html">হোম</a></li>
+                        <li><a href="chapters.html">অধ্যায়সমূহ</a></li>
+                        <li><a href="dashboard.html">প্রগতি</a></li>
+                        <li><a href="settings.html">সেটিংস</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>যোগাযোগ</h4>
+                    <ul>
+                        <li><i class="fas fa-envelope"></i> <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="6313110c15020802110156575223040e020a0f4d000c0e">[email&#160;protected]</a></li>
+                        <li><i class="fab fa-instagram"></i> @provakar.biswas.3914</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>Made with <i class="fas fa-heart"></i> by PROVAKAR | Copyright © 2025</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Action Button (Website Hub) -->
+    <div class="fab-container" id="fab-container">
+        <div class="fab-panel" id="fab-panel">
+            <div class="fab-panel-header">
+                <h3>PROVAKAR Hub</h3>
+                <button class="fab-panel-close" id="fab-panel-close">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="fab-links">
+                <a href="https://provakar4173student-del.github.io/provakar-hub/" target="_blank" class="fab-link">
+                    <span class="fab-link-icon">🏠</span>
+                    <span class="fab-link-text">Provakar Hub</span>
+                    <i class="fas fa-external-link-alt"></i>
+                </a>
+                <a href="https://provakar4173student-del.github.io/Provakar/" target="_blank" class="fab-link">
+                    <span class="fab-link-icon">📚</span>
+                    <span class="fab-link-text">Provakar Main</span>
+                    <i class="fas fa-external-link-alt"></i>
+                </a>
+                <a href="https://provakar4173student-del.github.io/provakar-math/" target="_blank" class="fab-link">
+                    <span class="fab-link-icon">🔢</span>
+                    <span class="fab-link-text">Provakar Math</span>
+                    <i class="fas fa-external-link-alt"></i>
+                </a>
+                <a href="/cdn-cgi/l/email-protection#cfbfbda0b9aea4aebdadfafbfe8fa8a2aea6a3e1aca0a2" class="fab-link">
+                    <span class="fab-link-icon">📧</span>
+                    <span class="fab-link-text">Email</span>
+                    <i class="fas fa-external-link-alt"></i>
+                </a>
+                <a href="https://www.instagram.com/provakar.biswas.3914" target="_blank" class="fab-link">
+                    <span class="fab-link-icon">📷</span>
+                    <span class="fab-link-text">Instagram</span>
+                    <i class="fas fa-external-link-alt"></i>
+                </a>
+            </div>
+        </div>
+        <button class="fab-btn" id="fab-btn">
+            <i class="fas fa-globe"></i>
+        </button>
+    </div>
+
+    <!-- Settings Modal -->
+    <div class="modal-overlay" id="settings-modal">
+        <div class="modal-content settings-modal-content">
+            <div class="modal-header">
+                <h2><i class="fas fa-cog"></i> সেটিংস</h2>
+                <button class="modal-close" id="settings-close">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="settings-tabs">
+                    <button class="settings-tab active" data-tab="display">ডিসপ্লে</button>
+                    <button class="settings-tab" data-tab="quiz">কুইজ</button>
+                    <button class="settings-tab" data-tab="data">ডেটা</button>
+                    <button class="settings-tab" data-tab="about">সম্পর্কে</button>
+                </div>
+                <div class="settings-panels">
+                    <!-- Display Settings -->
+                    <div class="settings-panel active" id="display-settings">
+                        <div class="setting-item">
+                            <label>থিম মোড</label>
+                            <div class="theme-switcher">
+                                <button class="theme-option active" data-theme="light">
+                                    <i class="fas fa-sun"></i> লাইট
+                                </button>
+                                <button class="theme-option" data-theme="dark">
+                                    <i class="fas fa-moon"></i> ডার্ক
+                                </button>
+                            </div>
+                        </div>
+                        <div class="setting-item">
+                            <label>ফন্ট সাইজ</label>
+                            <div class="font-size-switcher">
+                                <button class="font-size-option" data-size="small">ছোট</button>
+                                <button class="font-size-option active" data-size="medium">মাঝারি</button>
+                                <button class="font-size-option" data-size="large">বড়</button>
+                            </div>
+                        </div>
+                        <div class="setting-item">
+                            <label>রঙের থিম</label>
+                            <div class="color-theme-switcher">
+                                <button class="color-theme-option active" data-color="blue" style="background: #3b82f6;"></button>
+                                <button class="color-theme-option" data-color="green" style="background: #10b981;"></button>
+                                <button class="color-theme-option" data-color="purple" style="background: #8b5cf6;"></button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Quiz Settings -->
+                    <div class="settings-panel" id="quiz-settings">
+                        <div class="setting-item">
+                            <label>ডিফল্ট কুইজ মোড</label>
+                            <select id="default-quiz-mode">
+                                <option value="study">পড়ার মোড</option>
+                                <option value="practice">অনুশীলন মোড</option>
+                                <option value="exam">পরীক্ষা মোড</option>
+                            </select>
+                        </div>
+                        <div class="setting-item">
+                            <label>টাইমার</label>
+                            <div class="toggle-switch">
+                                <input type="checkbox" id="timer-toggle" checked>
+                                <span class="toggle-slider"></span>
+                            </div>
+                        </div>
+                        <div class="setting-item">
+                            <label>প্রশ্নের সংখ্যা</label>
+                            <select id="questions-per-quiz">
+                                <option value="10">১০</option>
+                                <option value="25">২৫</option>
+                                <option value="50">৫০</option>
+                                <option value="100">১০০</option>
+                                <option value="all">সব</option>
+                            </select>
+                        </div>
+                    </div>
+                    <!-- Data Settings -->
+                    <div class="settings-panel" id="data-settings">
+                        <div class="setting-item">
+                            <button class="btn btn-secondary" id="export-data">
+                                <i class="fas fa-download"></i> ডেটা এক্সপোর্ট
+                            </button>
+                        </div>
+                        <div class="setting-item">
+                            <button class="btn btn-secondary" id="import-data">
+                                <i class="fas fa-upload"></i> ডেটা ইমপোর্ট
+                            </button>
+                            <input type="file" id="import-file" accept=".json" style="display: none;">
+                        </div>
+                        <div class="setting-item">
+                            <button class="btn btn-danger" id="reset-progress">
+                                <i class="fas fa-trash-alt"></i> প্রগতি রিসেট
+                            </button>
+                        </div>
+                    </div>
+                    <!-- About -->
+                    <div class="settings-panel" id="about-settings">
+                        <div class="about-content">
+                            <h3>PROVAKAR Study Hub</h3>
+                            <p>ভার্সন: ১.০.০</p>
+                            <p>পশ্চিমবঙ্গ গ্রাম পঞ্চায়েত পরীক্ষার বাংলা বিষয়ের সম্পূর্ণ প্রস্তুতির জন্য তৈরি।</p>
+                            <p>যোগাযোগ: <a href="/cdn-cgi/l/email-protection#6616140910070d07140453525726010b070f0a4805090b"><span class="__cf_email__" data-cfemail="a1d1d3ced7c0cac0d3c3949590e1c6ccc0c8cd8fc2cecc">[email&#160;protected]</span></a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="js/storage.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/search.js"></script>
+    <script src="js/settings.js"></script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a16854e83b0f94c2',t:'MTc4MzI3NTA4MA=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>

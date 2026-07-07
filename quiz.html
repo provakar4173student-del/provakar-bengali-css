@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MCQ কুইজ - PROVAKAR</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/quiz.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div id="loading-screen" class="loading-screen">
+        <div class="loader">
+            <div class="loader-text">PROVAKAR</div>
+            <div class="loader-bar">
+                <div class="loader-progress"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="header-container">
+            <div class="logo">
+                <a href="index.html">
+                    <span class="logo-icon">📚</span>
+                    <span class="logo-text">PROVAKAR</span>
+                </a>
+            </div>
+            <nav class="nav-menu" id="nav-menu">
+                <ul class="nav-list">
+                    <li><a href="index.html" class="nav-link"><i class="fas fa-home"></i> হোম</a></li>
+                    <li><a href="chapters.html" class="nav-link"><i class="fas fa-book-open"></i> অধ্যায়সমূহ</a></li>
+                    <li><a href="dashboard.html" class="nav-link"><i class="fas fa-chart-line"></i> প্রগতি</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <button class="theme-toggle" id="theme-toggle"><i class="fas fa-moon"></i></button>
+                <button class="settings-btn" id="settings-btn"><i class="fas fa-cog"></i></button>
+                <button class="mobile-menu-btn" id="mobile-menu-btn"><i class="fas fa-bars"></i></button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Quiz Main -->
+    <main class="quiz-main">
+        <!-- Quiz Header -->
+        <section class="quiz-header">
+            <div class="container">
+                <div class="quiz-title-row">
+                    <div>
+                        <h1 class="quiz-main-title" id="quiz-title">MCQ কুইজ</h1>
+                        <p class="quiz-subtitle" id="quiz-subtitle">অধ্যায় নির্বাচন করুন</p>
+                    </div>
+                    <div class="quiz-mode-switcher">
+                        <button class="mode-btn active" data-mode="study">
+                            <i class="fas fa-book"></i> পড়ার মোড
+                        </button>
+                        <button class="mode-btn" data-mode="practice">
+                            <i class="fas fa-pencil-alt"></i> অনুশীলন
+                        </button>
+                        <button class="mode-btn" data-mode="exam">
+                            <i class="fas fa-file-alt"></i> পরীক্ষা
+                        </button>
+                    </div>
+                </div>
+                <div class="quiz-info-bar">
+                    <div class="quiz-info-item">
+                        <i class="fas fa-question-circle"></i>
+                        <span>মোট প্রশ্ন: <span id="total-questions">০</span></span>
+                    </div>
+                    <div class="quiz-info-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>সঠিক: <span id="correct-count">০</span></span>
+                    </div>
+                    <div class="quiz-info-item">
+                        <i class="fas fa-times-circle"></i>
+                        <span>ভুল: <span id="wrong-count">০</span></span>
+                    </div>
+                    <div class="quiz-info-item timer-item" id="timer-item" style="display: none;">
+                        <i class="fas fa-clock"></i>
+                        <span>সময়: <span id="timer">০০:০০</span></span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quiz Content -->
+        <section class="quiz-content-section">
+            <div class="container">
+                <!-- Study Mode: All questions visible -->
+                <div class="quiz-study-mode" id="study-mode">
+                    <div class="study-questions-list" id="study-questions">
+                        <!-- Questions will be loaded here -->
+                    </div>
+                </div>
+
+                <!-- Practice/Exam Mode: One question at a time -->
+                <div class="quiz-active-mode" id="active-mode" style="display: none;">
+                    <div class="question-card" id="question-card">
+                        <div class="question-header">
+                            <div class="question-number">
+                                প্রশ্ন <span id="current-q-num">১</span>/<span id="total-q-num">১০</span>
+                            </div>
+                            <div class="question-actions">
+                                <button class="btn-icon" id="bookmark-question" title="বুকমার্ক">
+                                    <i class="far fa-bookmark"></i>
+                                </button>
+                                <button class="btn-icon" id="report-question" title="রিপোর্ট">
+                                    <i class="fas fa-flag"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="question-text" id="question-text">
+                            প্রশ্ন লোড হচ্ছে...
+                        </div>
+                        <div class="question-options" id="question-options">
+                            <!-- Options will be loaded here -->
+                        </div>
+                        <div class="question-feedback" id="question-feedback" style="display: none;">
+                            <!-- Feedback will be shown here -->
+                        </div>
+                        <div class="question-navigation">
+                            <button class="btn btn-secondary" id="prev-btn" disabled>
+                                <i class="fas fa-arrow-left"></i> আগেরটি
+                            </button>
+                            <button class="btn btn-primary" id="next-btn">
+                                পরেরটি <i class="fas fa-arrow-right"></i>
+                            </button>
+                            <button class="btn btn-success" id="submit-btn" style="display: none;">
+                                <i class="fas fa-check"></i> জমা দিন
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Quiz Result Modal -->
+    <div class="modal-overlay" id="result-modal">
+        <div class="modal-content result-modal-content">
+            <div class="modal-header">
+                <h2><i class="fas fa-trophy"></i> কুইজ ফলাফল</h2>
+            </div>
+            <div class="modal-body">
+                <div class="result-circle" id="result-circle">
+                    <svg class="result-svg" viewBox="0 0 100 100">
+                        <circle class="result-bg" cx="50" cy="50" r="45"></circle>
+                        <circle class="result-fill" id="result-fill" cx="50" cy="50" r="45"></circle>
+                    </svg>
+                    <div class="result-percentage" id="result-percentage">০%</div>
+                </div>
+                <div class="result-stats">
+                    <div class="result-stat">
+                        <i class="fas fa-check-circle" style="color: var(--success-color);"></i>
+                        <span>সঠিক: <strong id="result-correct">০</strong></span>
+                    </div>
+                    <div class="result-stat">
+                        <i class="fas fa-times-circle" style="color: var(--danger-color);"></i>
+                        <span>ভুল: <strong id="result-wrong">০</strong></span>
+                    </div>
+                    <div class="result-stat">
+                        <i class="fas fa-clock" style="color: var(--info-color);"></i>
+                        <span>সময়: <strong id="result-time">০০:০০</strong></span>
+                    </div>
+                </div>
+                <div class="result-actions">
+                    <button class="btn btn-primary" id="review-btn">
+                        <i class="fas fa-eye"></i> ভুল উত্তরগুলো দেখুন
+                    </button>
+                    <button class="btn btn-secondary" id="retry-btn">
+                        <i class="fas fa-redo"></i> আবার দিন
+                    </button>
+                    <button class="btn btn-success" id="next-chapter-btn">
+                        পরবর্তী অধ্যায় <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>Made with <i class="fas fa-heart"></i> by PROVAKAR | Copyright © 2025</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- FAB -->
+    <div class="fab-container">
+        <button class="fab-btn" id="fab-btn"><i class="fas fa-globe"></i></button>
+    </div>
+
+    <!-- Chapters Data (for quiz questions) -->
+    <script src="js/chapters-data.js"></script>
+    <script src="js/quiz.js"></script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a1685963c9ab93c2',t:'MTc4MzI3NTI2NA=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>

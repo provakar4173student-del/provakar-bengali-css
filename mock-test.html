@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>মক টেস্ট - PROVAKAR</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/mock-test.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div id="loading-screen" class="loading-screen">
+        <div class="loader">
+            <div class="loader-text">PROVAKAR</div>
+            <div class="loader-bar">
+                <div class="loader-progress"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="header-container">
+            <div class="logo">
+                <a href="index.html">
+                    <span class="logo-icon">📚</span>
+                    <span class="logo-text">PROVAKAR</span>
+                </a>
+            </div>
+            <nav class="nav-menu" id="nav-menu">
+                <ul class="nav-list">
+                    <li><a href="index.html" class="nav-link"><i class="fas fa-home"></i> হোম</a></li>
+                    <li><a href="chapters.html" class="nav-link"><i class="fas fa-book-open"></i> অধ্যায়সমূহ</a></li>
+                    <li><a href="dashboard.html" class="nav-link"><i class="fas fa-chart-line"></i> প্রগতি</a></li>
+                    <li><a href="mock-test.html" class="nav-link active"><i class="fas fa-file-alt"></i> মক টেস্ট</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <button class="theme-toggle" id="theme-toggle"><i class="fas fa-moon"></i></button>
+                <button class="settings-btn" id="settings-btn"><i class="fas fa-cog"></i></button>
+                <button class="mobile-menu-btn" id="mobile-menu-btn"><i class="fas fa-bars"></i></button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mock Test Main -->
+    <main class="mock-test-main">
+        <div class="container">
+            <!-- Page Header -->
+            <section class="mock-test-header">
+                <h1 class="mock-test-title"><i class="fas fa-file-alt"></i> মক টেস্ট</h1>
+                <p class="mock-test-subtitle">সম্পূর্ণ পরীক্ষার প্রস্তুতির জন্য ফুল লেংথ মক টেস্ট</p>
+            </section>
+
+            <!-- Mock Test Selection -->
+            <section class="mock-test-selection">
+                <h2 class="section-title">মক টেস্ট সেট নির্বাচন করুন</h2>
+                <div class="mock-test-grid">
+                    <!-- Mock Test 1 -->
+                    <div class="mock-test-card">
+                        <div class="mock-test-card-header">
+                            <div class="mock-test-number">Extra Set 1</div>
+                            <div class="mock-test-difficulty difficulty-easy">সহজ</div>
+                        </div>
+                        <div class="mock-test-info">
+                            <p><i class="fas fa-question-circle"></i> মোট প্রশ্ন: ৫০</p>
+                            <p><i class="fas fa-clock"></i> সময়: ৩০ মিনিট</p>
+                            <p><i class="fas fa-book"></i> সকল অধ্যায় অন্তর্ভুক্ত</p>
+                        </div>
+                        <div class="mock-test-card-footer">
+                            <button class="btn btn-primary btn-sm" onclick="alert('মক টেস্ট শীঘ্রই আসছে!')">
+                                <i class="fas fa-play"></i> শুরু করুন
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Mock Test 2 -->
+                    <div class="mock-test-card">
+                        <div class="mock-test-card-header">
+                            <div class="mock-test-number">Extra Set 2</div>
+                            <div class="mock-test-difficulty difficulty-medium">মাঝারি</div>
+                        </div>
+                        <div class="mock-test-info">
+                            <p><i class="fas fa-question-circle"></i> মোট প্রশ্ন: ৭৫</p>
+                            <p><i class="fas fa-clock"></i> সময়: ৪৫ মিনিট</p>
+                            <p><i class="fas fa-book"></i> সকল অধ্যায় অন্তর্ভুক্ত</p>
+                        </div>
+                        <div class="mock-test-card-footer">
+                            <button class="btn btn-primary btn-sm" onclick="alert('মক টেস্ট শীঘ্রই আসছে!')">
+                                <i class="fas fa-play"></i> শুরু করুন
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Mock Test 3 -->
+                    <div class="mock-test-card">
+                        <div class="mock-test-card-header">
+                            <div class="mock-test-number">Extra Set 3</div>
+                            <div class="mock-test-difficulty difficulty-hard">কঠিন</div>
+                        </div>
+                        <div class="mock-test-info">
+                            <p><i class="fas fa-question-circle"></i> মোট প্রশ্ন: ১০০</p>
+                            <p><i class="fas fa-clock"></i> সময়: ৬০ মিনিট</p>
+                            <p><i class="fas fa-book"></i> সকল অধ্যায় অন্তর্ভুক্ত</p>
+                        </div>
+                        <div class="mock-test-card-footer">
+                            <button class="btn btn-primary btn-sm" onclick="alert('মক টেস্ট শীঘ্রই আসছে!')">
+                                <i class="fas fa-play"></i> শুরু করুন
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- More sets placeholder -->
+                    <div class="mock-test-card" style="opacity: 0.6;">
+                        <div class="mock-test-card-header">
+                            <div class="mock-test-number">Extra Set 4-10</div>
+                            <div class="mock-test-difficulty difficulty-medium">শীঘ্রই আসছে</div>
+                        </div>
+                        <div class="mock-test-info">
+                            <p>আরও ৭টি মক টেস্ট শীঘ্রই যুক্ত করা হবে...</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Instructions -->
+            <section class="mock-test-instructions" style="margin-top: 3rem;">
+                <div class="instruction-card" style="background: var(--bg-card); padding: 2rem; border-radius: var(--radius-lg); box-shadow: var(--shadow-sm);">
+                    <h3 style="color: var(--primary-color); margin-bottom: 1rem;">
+                        <i class="fas fa-info-circle"></i> মক টেস্টের নিয়মাবলী
+                    </h3>
+                    <ul style="color: var(--text-secondary); line-height: 2;">
+                        <li>প্রতিটি মক টেস্ট CBT (Computer Based Test) মোডে নিতে হবে</li>
+                        <li>প্রশ্ন প্যালেট থেকে যেকোনো প্রশ্নে যাওয়া যাবে</li>
+                        <li>"Mark for Review" বাটনে ক্লিক করে প্রশ্ন মার্ক করা যাবে</li>
+                        <li>সময় শেষ হয়ে গেলে বা "Submit" করলে টেস্ট শেষ হবে</li>
+                        <li>সাবমিট করার পর সাথে সাথে রেজাল্ট দেখা যাবে</li>
+                    </ul>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>Made with <i class="fas fa-heart"></i> by PROVAKAR | Copyright © 2025</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/storage.js"></script>
+    <script src="js/app.js"></script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a168560039c6c138',t:'MTc4MzI3NTEyNQ=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>

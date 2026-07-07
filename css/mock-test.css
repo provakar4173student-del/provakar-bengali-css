@@ -1,0 +1,288 @@
+/* ========================================
+   PROVAKAR - Mock Test Page Styles
+   ======================================== */
+
+/* Mock Test Header */
+.mock-test-header {
+    background: var(--bg-primary);
+    padding: 100px var(--spacing-lg) var(--spacing-lg);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.mock-test-title {
+    font-size: var(--font-size-2xl);
+    color: var(--text-primary);
+    margin-bottom: var(--spacing-sm);
+}
+
+.mock-test-title i {
+    margin-right: var(--spacing-sm);
+    color: var(--primary-color);
+}
+
+.mock-test-subtitle {
+    font-size: var(--font-size-base);
+    color: var(--text-muted);
+}
+
+/* Mock Test Selection */
+.mock-test-selection {
+    padding: var(--spacing-2xl) 0;
+}
+
+.mock-test-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: var(--spacing-lg);
+}
+
+.mock-test-card {
+    background: var(--bg-card);
+    padding: var(--spacing-xl);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+    transition: transform var(--transition-base), box-shadow var(--transition-base);
+}
+
+.mock-test-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+.mock-test-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--spacing-md);
+}
+
+.mock-test-number {
+    font-size: var(--font-size-lg);
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+.mock-test-difficulty {
+    padding: var(--spacing-xs) var(--spacing-md);
+    border-radius: var(--radius-full);
+    font-size: var(--font-size-xs);
+    font-weight: 600;
+}
+
+.difficulty-easy {
+    background: rgba(16, 185, 129, 0.1);
+    color: var(--success-color);
+}
+
+.difficulty-medium {
+    background: rgba(245, 158, 11, 0.1);
+    color: var(--warning-color);
+}
+
+.difficulty-hard {
+    background: rgba(239, 68, 68, 0.1);
+    color: var(--danger-color);
+}
+
+.mock-test-info {
+    margin-bottom: var(--spacing-lg);
+}
+
+.mock-test-info p {
+    color: var(--text-secondary);
+    margin-bottom: var(--spacing-sm);
+}
+
+.mock-test-info i {
+    margin-right: var(--spacing-sm);
+    color: var(--primary-color);
+}
+
+.mock-test-card-footer {
+    display: flex;
+    gap: var(--spacing-md);
+}
+
+/* CBT Interface */
+.cbt-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: var(--spacing-md);
+}
+
+.cbt-header {
+    background: var(--bg-card);
+    padding: var(--spacing-md) var(--spacing-lg);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-sm);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--spacing-md);
+}
+
+.cbt-timer {
+    font-size: var(--font-size-xl);
+    font-weight: 700;
+    color: var(--primary-color);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+}
+
+.cbt-progress {
+    font-size: var(--font-size-base);
+    color: var(--text-secondary);
+}
+
+.cbt-main {
+    display: grid;
+    grid-template-columns: 1fr 250px;
+    gap: var(--spacing-md);
+}
+
+.cbt-question-area {
+    background: var(--bg-card);
+    padding: var(--spacing-xl);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-sm);
+    min-height: 400px;
+}
+
+.cbt-question-number {
+    color: var(--primary-color);
+    font-weight: 600;
+    margin-bottom: var(--spacing-md);
+}
+
+.cbt-question-text {
+    font-size: var(--font-size-lg);
+    color: var(--text-primary);
+    margin-bottom: var(--spacing-xl);
+    line-height: 1.8;
+}
+
+.cbt-options {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+}
+
+.cbt-option {
+    padding: var(--spacing-lg);
+    background: var(--bg-secondary);
+    border: 2px solid var(--border-color);
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+}
+
+.cbt-option:hover {
+    border-color: var(--primary-color);
+}
+
+.cbt-option.selected {
+    border-color: var(--primary-color);
+    background: rgba(59, 130, 246, 0.1);
+}
+
+.cbt-palette {
+    background: var(--bg-card);
+    padding: var(--spacing-md);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-sm);
+}
+
+.cbt-palette-title {
+    font-size: var(--font-size-base);
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: var(--spacing-md);
+    text-align: center;
+}
+
+.cbt-palette-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: var(--spacing-sm);
+}
+
+.cbt-palette-btn {
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid var(--border-color);
+    background: var(--bg-secondary);
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    font-weight: 600;
+    transition: all var(--transition-fast);
+}
+
+.cbt-palette-btn.answered {
+    background: var(--success-color);
+    color: white;
+    border-color: var(--success-color);
+}
+
+.cbt-palette-btn.review {
+    background: var(--warning-color);
+    color: white;
+    border-color: var(--warning-color);
+}
+
+.cbt-palette-btn.skipped {
+    background: var(--danger-color);
+    color: white;
+    border-color: var(--danger-color);
+}
+
+.cbt-palette-btn.current {
+    border-color: var(--primary-color);
+    border-width: 3px;
+}
+
+.cbt-navigation {
+    display: flex;
+    justify-content: space-between;
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-lg);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .cbt-main {
+        grid-template-columns: 1fr;
+    }
+
+    .cbt-palette {
+        order: -1;
+    }
+
+    .cbt-palette-grid {
+        grid-template-columns: repeat(10, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .mock-test-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .cbt-palette-grid {
+        grid-template-columns: repeat(5, 1fr);
+    }
+
+    .cbt-navigation {
+        flex-direction: column;
+    }
+
+    .cbt-navigation .btn {
+        width: 100%;
+    }
+}
